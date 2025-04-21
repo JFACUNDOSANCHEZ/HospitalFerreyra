@@ -1,168 +1,328 @@
 .container {
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.urgentInfo {
+  position: absolute;
+  right: 5%;
+  font-size: 14px;
+  color: #444;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: right;
+  line-height: 1.4;
+}
+
+.urgentInfo p {
+  margin: 0;
+}
+
+.whatsappInfoLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.whatsappInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.whatsappIcon {
+  width: 1rem;
+  height: 4px;
+  object-fit: contain;
+}
+
+.urgentInfo span {
+  color: #2e7a78;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+
+
+
+.nav {
+  background-color: rgba(1, 82, 82, 0.79);
+  padding: 0.1px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2.5rem;
+}
+
+.navItem {
+  margin: 0 8px;
+  font-size: 14px;
+  padding: 4px 8px;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 16px;
+  background-color: white;
+}
+
+.logo {
+  max-height: 45px;
+  width: auto;
+}
+
+.hospitalInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.hospital {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2e7a78;
+  font-size: 28px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2e7a78;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 4px 0 0 0;
+  text-transform: uppercase;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  background-color: #2e7a78;
+  padding: 18px;
+  color: white;
+  max-width: 300px;
+  height: 15rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  transform: translateY(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.heroOverlay:hover {
+  transform: translateY(-10px);
+}
+
+.ctaButton {
+  margin-top: 1px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #333;
+  border: 2px solid white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.heroOverlay:hover .ctaButton {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.heroOverlayLeft {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  background-color: #2e7a78;
+  padding: 18px;
+  color: white;
+  max-width: 300px;
+  height: 15rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  transform: translateY(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.mainContent {
+  flex: 1;
+}
+
+.footer {
+  background-color: #f2f2f2;
+  color: #000;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  margin-top: auto;
+  width: 100%;
+  height: 6rem;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.socialLinks {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socialLinks a {
+  color: #2e7a78;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.socialLinks a:hover {
+  color: #0983a1;
+}
+
+.entrega {
+  text-align: center;
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: auto;
+    overflow: auto;
   }
+
   .urgentInfo {
-    position: absolute;
-    right: 5%; /* más a la izquierda */
-    font-size: 14px;
-    color: #444;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: right;
-    line-height: 1.4;
-  }
-  .urgentInfo p {
-    margin: 0;
-    
-    
-  }
-  
-  .urgentInfo span {
-    color: #00796B; /* teal oscuro */
-    font-weight: bold;
-    font-size: 25px;
-  }
-  
-  .menuList {
-
-
-    position: absolute;
-    top: 7%;          /* Más arriba para no salirse de la imagen */
-    left: 3%;             /* Más al borde pero dentro del área segura */
-    background-color: rgba(255, 255, 255, 0.73); /* Fondo semitransparente */
-    padding: 20px;
-    border-radius: 12px;
-    max-width: 250px;
-    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
-    z-index: 2;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);  /* Sombrita suave */
-  }
-  
-  .menuList ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin: 0;
-  }
-  
-  .menuList li {
-    margin-bottom: 10px;
-    color: #222;           /* Mejor contraste */
-    font-size: 15px;
-    line-height: 1.6;
-  }
-  
-  
-  
-  .nav {
-    background-color: rgb(163, 163, 163);
-    padding: 8px 16px; /* reduce el alto */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .navItem {
-    margin: 0 8px;
-    font-size: 14px;
-    padding: 4px 8px; /* menos relleno */
-  }
- 
-  
-  .logoSection {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 6px 16px; /* Menor padding = menos altura */
-    background-color: white;
-  }
-  
-  .logo {
-    max-height: 45px;
-    width: auto;
-  }
- 
-  
-  .hospitalInfo {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .hospital {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #2e7a78; /* tono verde azulado como en la imagen */
-    font-size: 24px;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin: 0;
-  }
-  
-  .subtitle {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #2e7a78;
-    font-size: 14px;
-    font-weight: 400;
-    margin: 4px 0 0 0;
-    text-transform: uppercase;
-  }
-  
-        
-
-  
-      
-      .hero {
-        position: relative;
-        display: flex;
-        overflow: hidden;
-      }
-      
-      .heroImage {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-      
-  .heroOverlay {
-    position: absolute;
-    top: 20%;
-    right: 10%;
-    background-color: rgba(0, 128, 128, 0.6);
-    padding: 20px;
-    color: white;
-    max-width: 300px;
-    border-radius: 8px;
-    font-size: 1.1rem;
-  }
-  
-  .ctaButton {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: white;
-    color: teal;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
- 
-  .appContainer {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .mainContent {
-    flex: 1;
-  }
-  
-  .footer {
-    background-color: #f2f2f2;
-    color: #000;
-    padding: 20px;
+    position: static;
     text-align: center;
-    font-size: 14px;
-    border-top: 1px solid #ccc;
+    margin-top: 10px;
   }
-    
-  
+
+  .menuList {
+    position: static;
+    max-width: 100%;
+    margin: 10px auto;
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .navItem {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+
+  .logoSection {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .hospital {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .heroOverlay,
+  .heroOverlayLeft {
+    position: static;
+    width: 90%;
+    height: 14rem;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    margin-top: 15px;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .footer {
+    height: auto;
+    padding: 20px 10px;
+    font-size: 12px;
+  }
+
+  .socialLinks {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+
+.emergencyBanner {
+  display: flex;
+  justify-content: flex-end;
+  background-color:#2e7a78;
+  padding: 2px ;
+  position: relative;
+  z-index: 10;
+}
+
+.emergencyButton {
+  background-color: #f5f7f9;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  color: rgb(8, 4, 4);
+  padding: 5px 10px;
+  gap: 5px;
+  border-radius: 20px;
+  font-weight:lighter;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+ 
+  transition: background-color 0.3s ease;
+}
+
+.emergencyButton:hover {
+  background-color: #061227;
+  color: white;
+}
+
+.emergencyButton i {
+  font-size: 16px;
+}
